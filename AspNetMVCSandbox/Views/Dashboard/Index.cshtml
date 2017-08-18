@@ -6,3 +6,11 @@
 <h2>Product List</h2>
 
 @Html.Partial("_CustomerOrderHistoryByProduct")
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#example").DataTable();
+        });
+</script>
+    }

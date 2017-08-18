@@ -10,6 +10,9 @@ namespace AspNetMVCSandbox
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jquery-datatable").Include(
+                        "~/Scripts/jquery.dataTables.min.js",
+                        "~/Scripts/dataTables.bootstrap.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -25,6 +28,7 @@ namespace AspNetMVCSandbox
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/dataTables.bootstrap.min.css",
                       "~/Content/site.css"));
         }
     }

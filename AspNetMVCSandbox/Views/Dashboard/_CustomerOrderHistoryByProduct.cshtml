@@ -22,11 +22,13 @@
     .main {
         display: flex;
     }
+
     .color-red {
-        color:red;
+        color: red;
     }
+
     .color-green {
-        color:green !important;
+        color: green !important;
     }
 </style>
 <!DOCTYPE html>
@@ -35,9 +37,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
-    <script type="text/javascript">
-        function ShowDetails(ProductID) { 
-        $('#myModal').modal('show')
+    <script>
+        function ShowDetails(ProductID) {
+            $('#myModal').modal('show')
         }
     </script>
 </head>
@@ -58,6 +60,30 @@
                 </a>
             }
         </div>
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a class="success" href="#" onclick="ShowDetails(@item.ProductID);">
+                                @Html.DisplayFor(model => item.ProductName)
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Total)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
@@ -79,7 +105,5 @@
 
         </div>
     </div>
-    Try it Yourself »
-
 </body>
 </html>
